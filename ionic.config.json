@@ -1,0 +1,7 @@
+{
+  "name": "bidly",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
