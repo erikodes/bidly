@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>welcome</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">welcome</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" [scrollY]="false">
+  <video class="bg-video" autoplay muted playsinline loop>
+    <source src="assets/videos/welcome-bg.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" [translucent]="true">
+      <ion-icon name="information-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <img src="assets/images/logo.svg" class="logo" width="80" alt="">
+    <h1>
+      Ready to change the way you shop?
+    </h1>
+    <ion-button expand="block" size="large" class="ion-margin-bottom" routerLink="auth/register">
+      Comenzar ahora
+    </ion-button>
+    <ion-button expand="block" color="light" routerLink="auth/login">
+      ¿Ya tienes una cuenta? Inicia sesión
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

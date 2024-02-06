@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Como te llamamos?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Como te llamamos?</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding-horizontal">
+    <ion-input placeholder="Nombre de usuario" [(ngModel)]="username" [clearInput]="true"></ion-input>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="dark" size="large" (click)="setUsername()" [disabled]="!username">
+      Entrar a Bidly
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

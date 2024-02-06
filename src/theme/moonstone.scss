@@ -1,0 +1,175 @@
+/*
+M"""""`'"""`YM                                       dP                             
+M  mm.  mm.  M                                       88                             
+M  MMM  MMM  M .d8888b. .d8888b. 88d888b. .d8888b. d8888P .d8888b. 88d888b. .d8888b.
+M  MMM  MMM  M 88'  `88 88'  `88 88'  `88 Y8ooooo.   88   88'  `88 88'  `88 88ooood8
+M  MMM  MMM  M 88.  .88 88.  .88 88    88       88   88   88.  .88 88    88 88.  ...
+M  MMM  MMM  M `88888P' `88888P' dP    dP `88888P'   dP   `88888P' dP    dP `88888P'
+MMMMMMMMMMMMMM                                                                                                                                                                                                                                                        
+*/
+
+/*******************************
+             BUTTONS
+*******************************/
+
+ion-button {
+    --border-radius: 0.6rem;
+    font-weight: bold;
+    margin: 0;
+
+    &[loading="true"] {
+        pointer-events: none !important;
+
+        &::part(native) {
+            color: transparent !important;
+        }
+    }
+
+    ion-spinner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+}
+
+/*******************************
+        HEADER, FOOTER
+*******************************/
+
+ion-footer,
+ion-header {
+    ion-toolbar {
+        --background: white;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-top: 16px;
+        --padding-bottom: 16px;
+
+        ion-back-button {
+            color: black;
+        }
+    }
+
+    &.header-collapse-condense {
+        ion-toolbar {
+            --padding-start: 4px;
+            --padding-end: 4px;
+            --padding-top: 0;
+        }
+    }
+}
+
+/*******************************
+             FORMS
+*******************************/
+
+ion-input {
+    --padding-start: 16px !important;
+    --padding-end: 4px !important;
+    --border-radius: 0.6rem !important;
+    --background: #eeeff2 !important;
+    min-height: 55px !important;
+    font-weight: 500;
+    --placeholder-color: var(--ion-color-dark-tint) !important;
+
+    &.has-focus {
+        --background: #e0e2e8 !important;
+    }
+
+    .input-bottom {
+        border: none !important;
+        padding-inline-start: 0 !important;
+    }
+}
+
+ion-radio {
+    --border-radius: 4px;
+    --inner-border-radius: 4px;
+    --color: #ddd;
+    --color-checked: #6815ec;
+
+    &.ios::part(container) {
+        width: 20px;
+        height: 20px;
+
+        border: 2px solid #ddd;
+        border-radius: 4px;
+    }
+
+    &.ios::part(container) {
+        border-color: #6815ec;
+    }
+}
+
+ion-checkbox {
+    --size: 24px;
+    --checkbox-background-checked: var(--ion-color-primary);
+    --border-color-checked: var(--ion-color-primary);
+    --checkmark-width: 3px;
+
+    &::part(container) {
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    &::part(label) {
+        white-space: unset;
+    }
+}
+
+/*******************************
+             LAYOUT
+*******************************/
+
+.d-flex {
+    display: flex;
+    gap: 8px;
+}
+
+/*******************************
+             TOAST
+*******************************/
+
+ion-toast {
+    font-weight: 600;
+    --width: fit-content !important;
+    --max-width: calc(100% - 32px) !important;
+    --border-radius: 200px;
+    --padding-end: 32px !important;
+    --margin-bottom: 15px;
+    --box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1) !important;
+    --background: white;
+
+    &::part(container) {
+        padding-right: 6px;
+    }
+
+    &::part(message) {
+        font-size: 14px;
+    }
+
+    &::part(icon) {
+        font-size: 22px !important;
+        margin-left: 7px;
+        border-radius: 100px;
+        padding: 3px;
+    }
+
+    &.success {
+        &::part(icon) {
+            background: rgb(66 215 125 / 22%);
+            color: var(--ion-color-success-tint) !important;
+        }
+    }
+
+    &.error {
+        &::part(icon) {
+            background: rgb(235 68 90 / 22%);
+            color: var(--ion-color-danger-tint) !important;
+        }
+    }
+}

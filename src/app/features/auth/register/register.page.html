@@ -1,13 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Únete a Bidly</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">register</ion-title>
+      <ion-title size="large">Únete a Bidly</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="ion-padding-horizontal">
+    <form [formGroup]="registroForm">
+      <ion-note color="medium">
+        Introduce el correo electrónico asociado a tu cuenta de Bidly.
+      </ion-note>
+
+      <div class="d-flex ion-margin-top">
+        <ion-input placeholder="Nombre" formControlName="name" [clearInput]="true"></ion-input>
+        <ion-input placeholder="Apellido" formControlName="lastname" [clearInput]="true"></ion-input>
+      </div>
+
+      <ion-input placeholder="Correo electrónico" errorText="Correo electrónico invalido" formControlName="email"
+        type="email" class="ion-margin-top" [clearInput]="true"></ion-input>
+
+      <ion-input placeholder="Contraseña" formControlName="password" type="password" class="ion-margin-top"
+        [clearInput]="true"></ion-input>
+
+      <ion-checkbox value="start" labelPlacement="end" formControlName="terms" class="ion-margin-top">
+        He leído y acepto las Condiciones de uso y Política de privacidad de Wallapop.
+      </ion-checkbox>
+    </form>
+  </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="dark" (click)="register($event)" size="large">
+      Unirme ahora
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
