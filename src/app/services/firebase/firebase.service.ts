@@ -12,7 +12,7 @@ export class FirebaseService {
 
   getAllDocuments(collection_name: string): Observable<any[]> {
     const notes_ref = collection(this.firestore, collection_name);
-    return collectionData(notes_ref, { idField: '$key' });
+    return collectionData(notes_ref, { idField: 'id' });
   }
 
   getRef(collection_name: string) {
@@ -21,7 +21,7 @@ export class FirebaseService {
 
   getDocument(collection_name: string, id: string): Observable<any> {
     const noteDocRef = doc(this.firestore, `${collection_name}/${id}`);
-    return docData(noteDocRef, { idField: '$key' });
+    return docData(noteDocRef, { idField: 'id' });
   }
 
   addDocument(collection_name: string, data_obj: any): Promise<any> {

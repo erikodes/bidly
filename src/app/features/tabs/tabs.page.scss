@@ -1,1 +1,58 @@
+.add-button {
+    background-color: var(--ion-color-dark);
+    height: 35px;
+    border-radius: 12px;
+    margin: 0 12px;
+    max-width: 65px;
+    box-shadow: 0 0 0 0 rgba(#000000, .5);
+    animation: pulse 1.5s infinite;
 
+    ion-icon {
+        color: white;
+        --ionicon-stroke-width: 60px;
+    }
+}
+
+ion-icon {
+    font-size: 25px;
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+.tab-selected {
+    color: var(--ion-color-dark) !important;
+}
+
+.icon-bounce {
+    animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.95);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(#000000, 0);
+    }
+
+    100% {
+        transform: scale(.95);
+        box-shadow: 0 0 0 0 rgba(#000000, 0);
+    }
+}

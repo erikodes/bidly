@@ -34,6 +34,10 @@ ion-button {
         margin: auto;
     }
 
+    &.button-round {
+        --border-radius: 200px;
+    }
+
 }
 
 /*******************************
@@ -46,11 +50,25 @@ ion-header {
         --background: white;
         --padding-start: 16px;
         --padding-end: 16px;
-        --padding-top: 16px;
-        --padding-bottom: 16px;
+        --padding-top: 8px;
+        --padding-bottom: 8px;
 
         ion-back-button {
             color: black;
+        }
+
+        ion-button.button-round {
+            --border-radius: 200px;
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            min-height: 38px;
+            max-width: 38px;
+            max-height: 38px;
+
+            ion-icon {
+                font-size: 22px !important;
+            }
         }
     }
 
@@ -172,4 +190,85 @@ ion-toast {
             color: var(--ion-color-danger-tint) !important;
         }
     }
+}
+
+/*******************************
+            ICONS
+*******************************/
+
+ion-icon {
+    --ionicon-stroke-width: 45px;
+}
+
+/*******************************
+            CARDS
+*******************************/
+
+ion-card {
+    box-shadow: none;
+    border: 1px solid rgba(22, 22, 26, 0.08);
+}
+
+/*******************************
+            SEARCHBAR
+*******************************/
+
+ion-searchbar {
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+    --background: var(--ion-color-light) !important;
+
+    .searchbar-input-container {
+        min-height: 45px !important;
+
+        .searchbar-search-icon {
+            inset-inline-start: 15px !important;
+            width: 1.3rem !important;
+        }
+
+        .searchbar-clear-button {
+            width: 2.88rem !important;
+        }
+
+        input {
+            padding-inline-start: 3rem !important;
+            padding-inline-end: 3rem !important;
+            font-size: 14px !important;
+        }
+    }
+}
+
+/*******************************
+        LISTAS, ITEMS
+*******************************/
+
+ion-list-header {
+    padding-left: 0 !important;
+
+    ion-label {
+        margin-top: 0 !important;
+        font-size: 18px;
+    }
+}
+
+/*******************************
+        CHIPS, BADGES
+*******************************/
+
+ion-chip {
+    border-radius: 8px;
+    margin: 0;
+    margin-right: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+/*******************************
+          EXTRAS
+*******************************/
+
+.scroll-x {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0 -16px;
+    padding: 0 16px;
 }

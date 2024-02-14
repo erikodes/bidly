@@ -1,17 +1,82 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-searchbar placeholder="Buscar" [debounce]="250"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list class="ion-padding">
+    <ion-list-header class="ion-padding-bottom">
+      <ion-label>Búsquedas populares</ion-label>
+    </ion-list-header>
+    <ion-chip [outline]="true">nike</ion-chip>
+    <ion-chip [outline]="true">hoodie</ion-chip>
+    <ion-chip [outline]="true">shoes</ion-chip>
+    <ion-chip [outline]="true">jeans</ion-chip>
+    <ion-chip [outline]="true">boots</ion-chip>
+    <ion-chip [outline]="true">cargo pants</ion-chip>
+    <ion-chip [outline]="true">sunglasses</ion-chip>
+    <ion-chip [outline]="true">beanie</ion-chip>
+    <ion-chip [outline]="true">rings</ion-chip>
+    <ion-chip [outline]="true">wallet</ion-chip>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-list-header class="ion-padding-bottom">
+      <ion-label>Búsquedas populares</ion-label>
+    </ion-list-header>
+
+    <ion-grid class="categories-container">
+      <ion-row>
+        <ion-col size="6">
+          <ion-item lines="none" color="danger">
+            <ion-label>Default Item</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" color="warning">
+            <ion-label>Default Item</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" color="tertiary">
+            <ion-label>Default Item</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" color="success">
+            <ion-label>Default Item</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" color="primary">
+            <ion-label>Default Item</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" color="secondary">
+            <ion-label>Default Item</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button color="light" expand="block" class="ion-margin-top">
+      Cargar más categorias
+    </ion-button>
+
+    <ion-list-header class="ion-padding-vertical">
+      <ion-label>Usuarios destacados</ion-label>
+    </ion-list-header>
+
+    <ion-list lines="none" class="scroll-x">
+      <ion-card class="user-info" *ngFor="let item of [].constructor(10)">
+        <ion-card-content>
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <strong>&#64;erikcodes</strong>
+          <p>200 pujas</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-list>
 </ion-content>

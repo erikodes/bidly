@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FirebaseService } from 'src/app/services/firebase/firebase.service';
+import { UtilsService } from 'src/app/services/utils/utils.service';
 
 @Component({
   selector: 'app-set-username',
@@ -12,17 +14,23 @@ export class SetUsernamePage implements OnInit {
 
   constructor(
     public api: FirebaseService,
-    private auth: AuthService
+    private auth: AuthService,
+    public router: Router,
+    public utils: UtilsService
   ) { }
 
   ngOnInit() {
   }
 
   setUsername() {
-    this.api.updateDocument(`users`, this.auth.user_key, {
+    console.log(this.auth.user);
+
+    this.api.updateDocument(`users`, this.auth.user.id, {
       username: this.username
     }).then(() => {
-      alert('bienvenido');
+      this.router.navigate([''], { replaceUrl: true, clearHistory: true } as NavigationExtras).then(() => {
+        this.utils.presentToast('Bienvenido a Bidly @' + this.username)
+      });
     })
   }
 

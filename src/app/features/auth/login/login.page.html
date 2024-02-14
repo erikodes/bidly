@@ -22,13 +22,13 @@
     <ion-input placeholder="Correo electrónico" errorText="Correo electrónico invalido" [(ngModel)]="email" type="email"
       class="ion-margin-top" [clearInput]="true"></ion-input>
 
-    <ion-input placeholder="Contraseña" [(ngModel)]="password" type="password" class="ion-margin-top"
+    <ion-input placeholder="Contraseña" [(ngModel)]="password" type="password" spellcheck="false" class="ion-margin-top"
       [clearInput]="true"></ion-input>
 
     <ion-button fill="clear" size="small" class="ion-no-padding ion-margin-bottom">
       ¿Olvidaste tu contraseña?
     </ion-button>
-    <ion-button expand="block" color="dark" size="large" (click)="login()">
+    <ion-button expand="block" color="dark" size="large" (click)="login($event)">
       Iniciar sesión
     </ion-button>
   </div>
